@@ -1,68 +1,57 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Paperless Parts Coding Challenge: Front-End #
 
-## Available Scripts
+This is an open-ended exercise aimed at assessing your technical skills with JavaScript frameworks (or your ability to learn new tools!).
 
-In the project directory, you can run:
+Your objective is to build a browser user interface that downloads a data package and renders it for a user. You may use the JavaScript framework of your choice, but we prefer solutions in [React](https://reactjs.org/). We suggest using a design library, such as [Ant Design](https://ant.design/), to save time designing UI styles. The solution will be evaluated based on user experience (UX), technical implementation, and completeness of the solution.
 
-### `yarn start`
+Aim to spend no more than 3-5 hours on your solution. We know that's not enough time for perfection, but we're interested in seeing how you prioritize.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Project Objective ##
 
-### `yarn test`
+This repository contains data files derived from the US Department of Education [College Scorecard](https://catalog.data.gov/dataset/college-scorecard) public domain dataset. These files contain a list of colleges and universities in the state of Massachusetts, along with some basic information about these schools, and a list of a academic programs offered by each.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Create a browser-based user interface that displays this dataset in a convenient way for a user.
 
-### `yarn build`
+Consider implementing any of the following features that makes the interface pleasant to use:
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* A list/index view that shows many schools
+* Pagination or infinite scrolling
+* Sorting
+* A detail view that shows all information about a particular school
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Data Description ###
 
-### `yarn eject`
+You will be working with three data files:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+* `ma_schools.json` contains a list of schools in Massachusetts, where each school is defined by a dictionary.
+* `fields.csv` contains descriptions of each key in the school dictionaries.
+* `programs.json` contains a dictionary describing the abbreviations of the academic programs listed for each school in the `'PROGRAMS'` key.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Extending Your Solution ###
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Too easy? You can extend your solution down the stack to demonstrate your technical breadth.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Consider adding any of these features:
 
-## Learn More
+* Front-End: Sort suppliers by proximity to the user. Come up with a solution for capturing the user's location and comparing it to each supplier's location.
+* Back-End: Rather than downloading static data documents, create a web service that provides the data. Use a relational database to store the search results and create queries to produce JSON serialization.
+* DevOps: Deploy your solution on the web or submit a containerized solution that we can run easily.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Submission Guidelines ##
 
-### Code Splitting
+### Submitting via Git ###
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+You may submit a solution using any convenient method. Internally, we collaborate via BitBucket, so you may wish to send your solution as follows:
 
-### Analyzing the Bundle Size
+* Fork and clone this repository. See [Forking a Repository](https://confluence.atlassian.com/bitbucket/forking-a-repository-221449527.html) for help.
+* Develop your application in a sub-directory of the repository.
+* Commit and push your changes to your forked repository.
+* Grant [@10flow](https://bitbucket.org/10flow/) access to your repository and follow up with us via email.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+### Documentation ###
 
-### Making a Progressive Web App
+Please provide some documentation (for example, in a README text or Markdown file) that, at a minimum, provides instructions for running your application. Include any additional information you think we would need to review your solution. If there are features you would complete or add given more time, tell us about those, too!
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
