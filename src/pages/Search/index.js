@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { Space } from 'antd';
+import React, { useState } from 'react';
 import Colleges from '../../components/Colleges';
 import SearchInput from '../../components/SearchInput';
 
