@@ -13,7 +13,7 @@ export default ({ searchRequest, setCount, count }) => {
   useEffect(() => {
     Promise.all([
       fetch(`https://geolocation-db.com/json/${geoAPI}`),
-      fetch('http://127.0.0.1:5000/ma-schools')
+      fetch('https://collegesearchbackend.herokuapp.com/ma-schools')
     ])
       .then(([res1, res2]) => Promise.all([res1.json(), res2.json()]))
       .then(([data1, data2]) => {

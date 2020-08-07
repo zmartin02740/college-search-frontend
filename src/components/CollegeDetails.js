@@ -21,7 +21,6 @@ export default ({
     fetch('http://127.0.0.1:5000/fields')
       .then(response => response.json())
       .then(data => {
-        console.log(data)
         data.map(field => {
           // Finding the rows related to campus set size
           const hasExclusively = field.Labels.includes('Exclusively')
