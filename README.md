@@ -9,6 +9,7 @@ The url for the production application is at url: https://collegesearchfrontend.
 This is a react application which allows users to search for 195 colleges in the massachusetts area
 There is pagination to allow for organization of 20 colleges per page
 There is a search feature that allows users to search colleges by college name or the city that the college is located in.
+This application also uses ip address to see what colleges are closest to the user for their convenience
 
 To see more information about the college, click "Learn More" to be brought to the show page.
 On this page you will find all the details of the college.
