@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { csv } from 'd3';
-import Fields from '../data/fields.csv';
 import Programs from './Programs';
 
 export default ({
@@ -12,13 +11,13 @@ export default ({
   const [campusSetSize, setCampusSetSize] = useState('')
 
   useEffect(() => {
-    fetch(`http://127.0.0.1:5000/ma-schools/${collegeName.split(' ').join('-')}`)
+    fetch(`https://collegesearchbackend.herokuapp.com/ma-schools/${collegeName.split(' ').join('-')}`)
       .then(response => response.json())
       .then(data => setCollege(data))
   }, [])
 
   useEffect(() => {
-    fetch('http://127.0.0.1:5000/fields')
+    fetch('https://collegesearchbackend.herokuapp.com/fields')
       .then(response => response.json())
       .then(data => {
         data.map(field => {
@@ -60,14 +59,14 @@ export default ({
       <div style={{ flex: 1, flexDirection: 'row', display: 'flex' }}>
         <div style={{ flex: 1 }}>
           <img src="https://via.placeholder.com/200" style={{ margin: '10px 10px 10px 0', borderRadius: 10 }} />
-          <div><b>College Name:</b> {collegeName}</div>
+          <div><b>College Name:</b> {college.INSTNM}</div>
           <div><b>College Link:</b> {college.INSTURL}</div>
           <div><b>State:</b> {college.STABBR}</div>
           <div><b>Zip:</b> {college.ZIP}</div>
         </div>
         <div style={{ flex: 1 }}>
           <h2>College Details</h2>
-          <div><b>Admission Rate:</b> {college.ADM_RATE}</div>
+          <div><b>Admission Rate:</b> {college.ADM_RATE} / 1.0</div>
           <div><b>Campus Size Set:</b> {campusSetSize}</div>
           <div><b>City:</b> {college.CITY}</div>
           <div><b>High Degree:</b> {degree}</div>

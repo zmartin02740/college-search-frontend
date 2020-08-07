@@ -1,57 +1,25 @@
-# Paperless Parts Coding Challenge: Front-End #
+To get this application running first use yarn package manager to install all dependencies 'yarn'
 
-This is an open-ended exercise aimed at assessing your technical skills with JavaScript frameworks (or your ability to learn new tools!).
+next run the command 'yarn start' to get the application running
 
-Your objective is to build a browser user interface that downloads a data package and renders it for a user. You may use the JavaScript framework of your choice, but we prefer solutions in [React](https://reactjs.org/). We suggest using a design library, such as [Ant Design](https://ant.design/), to save time designing UI styles. The solution will be evaluated based on user experience (UX), technical implementation, and completeness of the solution.
+the front end is running on port 3000
 
-Aim to spend no more than 3-5 hours on your solution. We know that's not enough time for perfection, but we're interested in seeing how you prioritize.
+The url for the production application is at url: https://collegesearchfrontend.herokuapp.com/
 
+This is a react application which allows users to search for 195 colleges in the massachusetts area
+There is pagination to allow for organization of 20 colleges per page
+There is a search feature that allows users to search colleges by college name or the city that the college is located in.
 
-## Project Objective ##
+To see more information about the college, click "Learn More" to be brought to the show page.
+On this page you will find all the details of the college.
+It will also provide all the programs that a particular college offers along with a tooltip with more details about each program when hovered over.
 
-This repository contains data files derived from the US Department of Education [College Scorecard](https://catalog.data.gov/dataset/college-scorecard) public domain dataset. These files contain a list of colleges and universities in the state of Massachusetts, along with some basic information about these schools, and a list of a academic programs offered by each.
+This application is pulling all its data from a flask backend and a postgres database.
+The backend url is https://collegesearchbackend.herokuapp.com/
 
-Create a browser-based user interface that displays this dataset in a convenient way for a user.
+This application is using the following api requests
 
-Consider implementing any of the following features that makes the interface pleasant to use:
-
-* A list/index view that shows many schools
-* Pagination or infinite scrolling
-* Sorting
-* A detail view that shows all information about a particular school
-
-
-### Data Description ###
-
-You will be working with three data files:
-
-* `ma_schools.json` contains a list of schools in Massachusetts, where each school is defined by a dictionary.
-* `fields.csv` contains descriptions of each key in the school dictionaries.
-* `programs.json` contains a dictionary describing the abbreviations of the academic programs listed for each school in the `'PROGRAMS'` key.
-
-### Extending Your Solution ###
-
-Too easy? You can extend your solution down the stack to demonstrate your technical breadth.
-
-Consider adding any of these features:
-
-* Front-End: Sort suppliers by proximity to the user. Come up with a solution for capturing the user's location and comparing it to each supplier's location.
-* Back-End: Rather than downloading static data documents, create a web service that provides the data. Use a relational database to store the search results and create queries to produce JSON serialization.
-* DevOps: Deploy your solution on the web or submit a containerized solution that we can run easily.
-
-
-## Submission Guidelines ##
-
-### Submitting via Git ###
-
-You may submit a solution using any convenient method. Internally, we collaborate via BitBucket, so you may wish to send your solution as follows:
-
-* Fork and clone this repository. See [Forking a Repository](https://confluence.atlassian.com/bitbucket/forking-a-repository-221449527.html) for help.
-* Develop your application in a sub-directory of the repository.
-* Commit and push your changes to your forked repository.
-* Grant [@10flow](https://bitbucket.org/10flow/) access to your repository and follow up with us via email.
-
-### Documentation ###
-
-Please provide some documentation (for example, in a README text or Markdown file) that, at a minimum, provides instructions for running your application. Include any additional information you think we would need to review your solution. If there are features you would complete or add given more time, tell us about those, too!
-
+GET /ma-schools -> a list of all the colleges in massachusetts
+GET /ma-schools/<name> -> one college from a list of colleges in massachusetts
+GET /programs -> a list of offered programs
+GET /fields -> a list of fields related to each college

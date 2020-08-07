@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Tooltip } from 'antd';
-import programsJSON from '../data/programs.json';
 import { QuestionCircleOutlined } from '@ant-design/icons';
 import Card from './Card';
 
@@ -21,7 +20,7 @@ const flattenObject = (obj) => {
 export default ({ programs }) => {
   const [collegePrograms, setCollegePrograms] = useState({})
   useEffect(() => {
-    fetch('http://127.0.0.1:5000/programs')
+    fetch('https://collegesearchbackend.herokuapp.com/programs')
       .then(res => res.json())
       .then(data => setCollegePrograms(data))
   }, [])
